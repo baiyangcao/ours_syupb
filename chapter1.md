@@ -13,7 +13,16 @@
                   template="" 
                   parameters="" 
                   filenamefield="template" />
-          <output type=
+          <output type="excel"
+                  conn="conn"
+                  template=""
+                  parameters=""
+                  filenamefield="template" />
+          <output type="service"
+                  conn="conn"
+                  sql=""
+                  parameters=""
+                  filenamefield=""
         </group>
       </folder>
     </flow>
