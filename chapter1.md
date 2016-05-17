@@ -22,7 +22,14 @@
                   conn="conn"
                   sql=""
                   parameters=""
-                  filenamefield=""
+                  filenamefield="FileName"
+                  serviceparameters="" />
+          <output type="draft"
+                  conn="conn"
+                  sql=""
+                  parameters=""
+                  filenamefield="FileName"
+                  fileobjfield="FileOBj" />
         </group>
       </folder>
     </flow>
