@@ -24,7 +24,7 @@
                   parameters=""
                   filenamefield="FileName"
                   serviceparameters=""
-                  resulttype="file"/>
+                  resulttype="[file]|type"/>
           <output type="draft"
                   conn="conn"
                   sql=""
