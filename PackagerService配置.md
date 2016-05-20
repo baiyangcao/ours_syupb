@@ -17,8 +17,14 @@
               <bookmarksql sql="">
             </bookmarksqls>
             <datasetsqls>
-              <datatablesql tablename="" sql=""/>
+              <datatablesql tablename="" sql="" />
             </datasetsqls>
+            <images>
+              <image type="path|sql" 
+                     name="" 
+                     value="" 
+                     sql="" />
+            </images>
           </output>
           <output type="excel"
                   conn="conn"
