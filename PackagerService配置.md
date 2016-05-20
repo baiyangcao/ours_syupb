@@ -12,7 +12,14 @@
                   conn="conn" 
                   template="" 
                   parameters="" 
-                  filenamefield="template" />
+                  filenamefield="template">
+            <bookmarksqls>
+              <bookmarksql sql="">
+            </bookmarksqls>
+            <datasetsqls>
+              <datatablesql tablename="" sql=""/>
+            </datasetsqls>
+          </output>
           <output type="excel"
                   conn="conn"
                   template=""
