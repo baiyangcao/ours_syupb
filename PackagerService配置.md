@@ -30,7 +30,17 @@
                   conn="conn"
                   template=""
                   parameters=""
-                  filenamefield="template" />
+                  filenamefield="template">
+            <varmarkers>
+              <varmarker name="" value="" />
+            </varmarkers>
+            <arraymarkers>
+              <arraymarker name="" value="" />
+            </arraymarkers>
+            <datatablemarkers>
+              <datatablemarker name="" sql="" conn="" />
+            </datatablemarkers>
+          </output>
           <output type="service"
                   conn="conn"
                   sql=""
@@ -61,3 +71,14 @@
   ...
 </tasks>
 ```
+
+## 节点说明
+
+| 节点名称 | 节点说明 |
+|:------- | ------- |
+| tasks | 任务列表节点，其下可配置多个task节点 |
+| task | 任务节点，指定任务的名称和导出目录，当前任务导出文件的根目录，其下可配置多个流程节点 |
+| flow | 导出流程节点，指定连接和SQL语句获取原始数据源，也可以配置一层目录， 其下可配置folder、group或output节点 |
+| folder | 目录节点，添加一层指定名称的目录，其下可配置folder、group或output节点 |
+| group | 分组目录节点，根据数据源和分组字段对数据进行分组并根据分组字段值设置一层目录 |
+| output | 输出文件节点，配置具体要输出的文件 |
