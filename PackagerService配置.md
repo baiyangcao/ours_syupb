@@ -23,7 +23,8 @@
                   sql=""
                   parameters=""
                   filenamefield="FileName"
-                  serviceparameters="" />
+                  serviceparameters=""
+                  resulttype="file|result"/>
           <output type="draft"
                   conn="conn"
                   sql=""
