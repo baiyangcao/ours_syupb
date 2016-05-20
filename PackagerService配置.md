@@ -31,6 +31,7 @@
                          value=""
                          sqlname="" 
                          connname="conn"/>
+               ...
             </service>
           </output>
           <output type="draft"
