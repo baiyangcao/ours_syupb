@@ -25,7 +25,7 @@
                   filenamefield="FileName"
                   serviceparameters=""
                   resulttype="[file]|type">
-            <service>
+            <service name="" location="" method="">
               <parameter />
             </service>
           </output>
