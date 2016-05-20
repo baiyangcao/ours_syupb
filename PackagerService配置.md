@@ -26,8 +26,11 @@
                   serviceparameters=""
                   resulttype="[file]|type">
             <service name="" location="" method="">
-              <parameter name="" valuetype="[raw]|sql" value=""
-                sqlname="" connname=""/>
+              <parameter name="" 
+                         valuetype="[raw]|sql" 
+                         value=""
+                         sqlname="" 
+                         connname="conn"/>
             </service>
           </output>
           <output type="draft"
