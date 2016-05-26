@@ -6,7 +6,14 @@
 
 ## 节点说明
 
-`Words--Word--bookmarksqls/bookmarksql--datasetsqls/datatablesql--images/image`
+```
+<output ...>
+  <bookmarksqls>
+    <bookmarksql name=""  />
+    ...
+  </bookmarksqls>
+</output>
+```
 
  - `bookmarksqls/bookmarksql`: 模板文件中书签字段对应的查询语句配置
  - `datasetsqls/datatablesql`: 模板文件中表格数据对应的查询语句配置
