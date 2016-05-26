@@ -1,5 +1,9 @@
 # Word配置
 
+
+---
+
+
 ## 节点说明
 
 `Words--Word--bookmarksqls/bookmarksql--datasetsqls/datatablesql--images/image`
@@ -7,6 +11,10 @@
  - `bookmarksqls/bookmarksql`: 模板文件中书签字段对应的查询语句配置
  - `datasetsqls/datatablesql`: 模板文件中表格数据对应的查询语句配置
  - `images/image`: 模板文件中图片数据对应的查询语句配置
+
+
+---
+
 
 ## 书签配置
 
@@ -19,6 +27,10 @@
 ### 节点配置
 
 `bookmarksqls`下配置一个或多个`bookmarksql`节点，每个`bookmarksql`节点配置一个SQL语句，取`instancesql`查询结果记录作为sql参数
+
+
+---
+
 
 ## 表格配置
 
@@ -35,6 +47,10 @@
 ### 节点配置
 
 `datasetsqls`下配置一个或多个`datatablesql`节点，`tablename`属性配置表名，对应模板中的域名中的表名，其下配置SQL语句，取`instancesql`查询结果记录作为sql参数
+
+
+---
+
 
 ## 图片配置
 
