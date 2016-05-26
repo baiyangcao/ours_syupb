@@ -1,6 +1,6 @@
 # Word配置
 
-# 节点说明
+## 节点说明
 
 `Words--Word--bookmarksqls/bookmarksql--datasetsqls/datatablesql--images/image`
 
