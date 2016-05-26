@@ -9,9 +9,17 @@
 ```
 <output ...>
   <bookmarksqls>
-    <bookmarksql name=""  />
+    <bookmarksql sql=""  />
     ...
   </bookmarksqls>
+  <datasetsqls>
+    <datatablesql name="" sql="" />
+    ...
+  </datasetsqls>
+  <images>
+    <image type="path/sql" name="" value="" />
+    ...
+  </images>
 </output>
 ```
 
