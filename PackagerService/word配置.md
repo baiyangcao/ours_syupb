@@ -14,11 +14,11 @@ Words--Word--bookmarksqls/bookmarksql--datasetsqls/datatablesql--images/image
 
 在Word菜单栏‘插入’--‘书签’，插入书签，书签名称对应SQL语句中查询结果字段名  
   
-[[/Configuration/Word_BookMark.jpg]]
+![](../images/Word_BookMark.jpg)
 
 ### 节点配置
 
-BookMarkSqls下配置一个或多个BookMarkSql节点，每个BookMarkSql节点配置一个SQL语句，取instancesql查询结果记录作为sql参数
+bookmarksqls下配置一个或多个bookmarksql节点，每个bookmarksql节点配置一个SQL语句，取instancesql查询结果记录作为sql参数
 
 ## 表格配置
 
@@ -26,7 +26,7 @@ BookMarkSqls下配置一个或多个BookMarkSql节点，每个BookMarkSql节点�
 
 在Word菜单栏‘插入’--‘文档部件’--‘域’，弹出域窗口，域名列表中选择‘**MergeField**’，在域名中填写对应的域名，确定后会在光标位置插入一个为"《域名》"的域
   
-[[/Configuration/Word_MergeField.jpg]]
+![](../images/Word_MergeField.jpg)
 
 在Word菜单中插入表格，以域名为“《TableStart:表名》”为表格的开始，“《TableEnd:表名》”为表格的结束，“《列名》”为每一列的对应的字段名，其中表名对应DataTableSql[@tablename]属性，列表对应SQL语句查询结果中的字段名，如下图  
   
