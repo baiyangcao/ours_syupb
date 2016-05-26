@@ -2,11 +2,11 @@
 
 # 节点说明
 
-Words--Word--bookMarkSqls/BookMarkSql--DataSetSql/DataTableSql--Images/Image
+Words--Word--bookmarksqls/bookmarksql--datasetsqls/datatablesql--images/image
 
- - BookMarkSqls/BookMarkSql: 模板文件中书签字段对应的查询语句配置
- - DataSetSql/DataTableSql: 模板文件中表格数据对应的查询语句配置
- - Images/Image: 模板文件中图片数据对应的查询语句配置
+ - bookmarksqls/bookmarksql: 模板文件中书签字段对应的查询语句配置
+ - datasetsqls/datatablesql: 模板文件中表格数据对应的查询语句配置
+ - images/image: 模板文件中图片数据对应的查询语句配置
 
 ## 书签配置
 
