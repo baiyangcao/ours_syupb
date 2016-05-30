@@ -78,6 +78,3 @@
 | name | 必填 | 表格名称，对应模板中配置的`数据源` |
 | sql | 必填 | 获取数据所用的sql语句名称，用SQLGetter.GetSqlByAttr方法获取具体的SQL语句 |
 | conn | `conn` | 数据库连接字符串名称，指在Web.config或者App.config文件中配置的连接字符串名称，**默认值为从`output`节点中继承来的`conn`属性** |
-
-
-
