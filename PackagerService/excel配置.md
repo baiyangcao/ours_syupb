@@ -6,7 +6,7 @@
 
 ```
 <output ...>
-  <cccc>
+  <varmarkers>
     <varmarker name="" value="" />
     ...
   </varmarkers>
