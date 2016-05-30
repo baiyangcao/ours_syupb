@@ -4,8 +4,6 @@
 
 ## 节点说明
 
-## 节点说明
-
 ```
 <output ...>
   <cccc>
@@ -23,7 +21,7 @@
 </output>
 ```
 
- - `varmarkers/varmarker`: 模板文件中变量对应的配置
+ - `varmarkers/varmarker`: 模板文件中单一变量对应的配置
  - `arraymarkers/arraymarker`: 模板文件中数组变量对应的配置
  - `datatablemarkers/datatablemarker`: 模板文件中表格数据对应的配置
 
@@ -31,17 +29,17 @@
 ---
 
 
-## 书签配置
+## 单一变量配置
 
 ### 模板配置
 
-在Word菜单栏`插入`--`书签`，插入书签，书签名称对应SQL语句中查询结果字段名  
-  
-![](../images/Word_BookMark.jpg)
+在Excel的单元格中输入`&=$name`即可，其中的name为变量值，即在节点中配置的name值
 
 ### 节点配置
 
-`bookmarksqls`下配置一个或多个`bookmarksql`节点，每个`bookmarksql`节点配置一个SQL语句，取`instancesql`查询结果记录作为sql参数
+`varmarkers`下配置一个或多个`varmaker`节点，每个`varmarker`节点配置一个单一变量名和变量值
+
+| 
 
 
 ---
