@@ -9,5 +9,5 @@
    * [Excel配置](PackagerService/excel配置.md)
    * [Service配置](PackagerService/service配置.md)
 * [MapExporter](MapExporter/README.md)
-   * 安装说明
+   * [安装说明](MapExporter/installation.md)
 
