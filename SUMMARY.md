@@ -11,5 +11,5 @@
 * [MapExporter](MapExporter/README.md)
    * [安装说明](MapExporter/installation.md)
    * [配置说明](MapExporter/配置说明.md)
-   * 使用说明
+   * [使用说明](MapExporter/使用说明.md)
 
