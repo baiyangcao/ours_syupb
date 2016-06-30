@@ -19,7 +19,6 @@
 > `A:` 关联关系如下：
 > ```
 > GeoGGFlowInstance b
->   on b.InstanceID = a.序号
 > left join GeoGGProject c
 >   on c.InstanceID = b.FolderID
 > left join GeoGGProjBuildCo d
