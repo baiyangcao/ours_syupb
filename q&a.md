@@ -30,6 +30,8 @@
 > left join GeoPersonInfo g
 >   on g.IDCard = f.IDCard
 > ```
+> 其中`GeoExterUnit`表为报建单位项目信息表
+> `GeoPersonInfo`表为报建人信息表
 
 
 
