@@ -1,3 +1,3 @@
-# My Awesome Book
+# Ours Syupb
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+谨以此库献给那些年在Syupb中奋斗挣扎的战士们，愿世界和平
