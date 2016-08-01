@@ -20,7 +20,7 @@
 
 4. 在弹出的主界面中有两个配置需要注意的地方：
 
-  1. **本地设置信息-&gt;C\#源代码路径**，配置导出的数据层（DBModel）和工作流（WorkFlow）的源码
+  1. **本地设置信息->C#源代码路径**，配置导出的数据层（DBModel）和工作流（WorkFlow）的源码
   2. **数据库连接设置**，这里配置工作流定义信息、报表定义信息等导出的位置  
    ![](../images/UCML_MainConfiguration.jpg)
 
@@ -56,3 +56,39 @@
 > ![](../images/UCML_WorkFlowAutoAssignTaskError.jpg)
 
 这里的每个环节需要配置的回调函数为`wm_assign`/`wm_afterAssignTask`/`wm_beforeAssignTask`/`wm_afterTaskFinish`，可以从现有的流程中拷贝对应的函数内容即可，一般流程中*初审、复审、审定、批准*环节的回调函数相同
+
+# 导出工作流
+
+导出工作流步骤如下  
+![](../images/UCML_ExportFlow.jpg)
+
+### 文件夹组织结构
+
+导出工作流文件夹（在**UCML配置**中配置的**C#源码路径**）组织结构如下：
+![](../images/UCML_ExportFolder.JPG)
+
+### 导出具体步骤
+
+1. **创建流程数据表**，右键工作流模型创建流程数据表，这一步会在目标数据库（在**UCML配置**中配置的导出数据库位置）中创建流程和环节表（形如：`Flow_XXX`,`AC_XXX`）
+![](../images/UCML_CreateFlowDataTable.jpg)
+
+2. **导出工作流定义信息**，选择菜单栏中**.NET项目->环境数据到目标库->工作流定义信息**，等待弹出“导出完成”提示（耗时）  
+![](../images/UCML_ExportWorkFlowDefinition.jpg)
+
+3.  **数据层源码生成**，选择菜单栏中**.NET项目->数据层源码生成(step 2)**，这里源码会生成到`C#源码路径/DBModel`中 
+![](../images/UCML_GenerateDataLayerSourceCode.jpg)
+
+4.  **工作流驱动源码生成**，右键*工作流模型*，选择*工作流驱动源码生成*，这里源码会生成到`C#源码路径/WorkFlow`中 
+![](../images/UCML_GenerateWorkFlowSourceCode.jpg)
+
+> 注： 在执行**数据层源码生成**和**工作流驱动源码生成**步骤时会不停的报错，一路单击回车忽略即可
+
+完成以上四步之后，新创建的流程代码分别更新到了`DBModel`和`WorkFlow`文件夹下，流程相关信息则导出到了目标数据库中
+
+
+
+
+
+
+
+
