@@ -30,4 +30,29 @@
 
 主要以现有项目为例（就是维护），右键**沈阳规管**，在弹出的菜单中点击**添加子项目包**  
 ![](../images/UCML_AddNewSubProjectPackage.jpg)
-右键新添加的子项目包，
+右键新添加的子项目包，单击**工作流管理**新建*工作流管理*节点  
+![](../images/UCML_AddNewWorkFlowManagement.jpg)
+
+### 2. 创建工作流模型
+
+系统会根据创建的工作流完成业务，在上一环节添加的*工作流管理*节点上右键，选择**添加工作流模型**  
+![](../images/UCML_AddNewWorkFlowModel.jpg)  
+
+### 3. 绘制工作流模型
+
+单击刚刚添加的工作流模型，右边则显示出对应的模型绘制界面  
+![](../images/UCML_WorkFlowDrawer.jpg)  
+每个流程都需要一个开始和结束环节
+![](../images/UCML_WorkFlowStartEnd.JPG)
+绘制流程工具条如下  
+![](../images/UCML_WorkFlowToolbar.JPG)
+
+### 4. 回调函数的设置
+
+流程中的每个步骤都需要设置回调函数，在环节的属性标签中勾选**使用回调函数分配任务**  
+![](../images/UCML_CheckAutoAssignTask.jpg)  
+
+> 注：若勾选了**是否自动重新分配任务**，在运行流程时会提示如下错误：
+> ![](../images/UCML_WorkFlowAutoAssignTaskError.jpg)
+
+这里的每个环节需要配置的回调函数为`wm_assign`/`wm_afterAssignTask`/`wm_beforeAssignTask`/`wm_afterTaskFinish`，可以从现有的流程中拷贝对应的函数内容即可，一般流程中*初审、复审、审定、批准*环节的回调函数相同
