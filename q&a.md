@@ -46,5 +46,15 @@
 > 2. 重新注册组件，在客户端的安装目录`C:\Program Files\Geostar\SystemRequest`下，找到批处理文件`Reg.bat`(有些机器没有显示后缀名，可能显示为`Reg`)，运行即可执行重新注册  
 > 3. 重置IE，重新设置IE设置，设置完后再次打开附件管理页面时，页面上方可能会弹出插件安全性检查之类的提示，右键选择`在所有网站上加载`即可
 
+## 附件管理界面点击`文件上传`报错`此实现不是 windows 平台 fips 验证的加密算法的一部分`
+
+> `Q:` 附件管理界面，点击`文件上传`按钮，弹出如下提示窗口
+> ![此实现不是 windows 平台 fips 验证的加密算法的一部分](images/QA_affixmanager_windows_fips.jpg)
+> 
+> `A:` 注册表问题，修复注册表即可
+>  - win+r，输入regedit
+>  - 定位目录HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\FipsAlgorithmPolicy
+>  - 修改Enabled的值改为0
+
 
 
