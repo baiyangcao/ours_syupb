@@ -25,14 +25,16 @@ root/item节点属性如下：
     *{[TYPECODE]:[INSTANCEIDS],...}*
 ```
 
-    其中*[TYPECODE]*代表要抽取的事项，可取值为：  
+    其中*[TYPECODE]*代表要抽取的事项，可取值为： 
+    ```
        type_ydys   type_pcbp   type_tdcb   type_tdjy  
        type_tddj   type_tdgy   xz          yd         
        jy          jf          js          sf  
        ss  
-      *[INSTANCEIDS]*代表要抽取项目的InstanceID，  
-           多个用英文逗号","隔开，若为空则按照LastDate查询增量的项目  
-   例如，如下抽取了一个供地项目和所有的选址项目  
+    ```
+      *[INSTANCEIDS]*代表要抽取项目的InstanceID
+      
+  多个用英文逗号","隔开，若为空则按照LastDate查询增量的项目，例如，如下抽取了一个供地项目和所有的选址项目  
 ```
    {type_tdgy:7185EB8F-995A-4D67-8BF0-53958D783710,xz:}
 ```
