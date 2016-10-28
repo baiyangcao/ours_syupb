@@ -22,6 +22,7 @@
   * [UCML](UCML/README.md)
 
 * 杂记篇
-
+  
+   * [成果管理系统抽取工具配置](syams.md)
    * [你问我答](q&a.md)
 
