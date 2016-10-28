@@ -1,7 +1,6 @@
 # Summary
 
 * [Introduction](README.md)
-   * syams
 * [PackagerService](PackagerService/README.md)
    * [配置概述](PackagerService/配置概述.md)
    * [配置详解](PackagerService/配置详解.md)
@@ -18,5 +17,6 @@
 * [UCML](UCML/README.md)
    * [Guidance](UCML/Guidance.md)
    * [Q&A](UCML/q&a.md)
+* syams
 * [Q&A](q&a.md)
 
