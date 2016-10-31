@@ -33,4 +33,8 @@ DataTransfer/
  - `STSJ` —— 省厅数据抽取到成果库（syds）的业务类，其中省厅数据通过Web Service 接口获取，`Data/SyConfig.xml`配置文件中配置了接口返回字段与数据库字段的对应关系
  - `ZHJG` —— 成果库（syds）抽取到综合监管库（geobuns，Oracle数据库）的业务类
 
+## 业务类开发
 
+ 1. 在对应的`Business`目录下新增业务类，继承`TransferBase`类，实现`TransferData`和`DeleteData`方法，前者用于抽取数据，后者用于删除数据
+ 2. 通过`TransferBase.GetTransferParameterByTable`获得`TransferParameter`变量，用于获取需要操作的开始结束时间等抽取参数
+ 3. 在`DataTransfer.Common.TransferHelper`的构造函数中添加新的业务抽取名称与对应业务类的对应关系即可
