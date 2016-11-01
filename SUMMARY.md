@@ -20,5 +20,5 @@
 * [syams](syams.md)
 * [Q&A](q&a.md)
 * [DataTransfer](datatransfer.md)
-* BWBatch
+* [BWBatch](bwbatch.md)
 
