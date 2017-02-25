@@ -25,6 +25,11 @@
 
 > **注：**  
 > 移动公文-国泰新点中间平台为tomcat应用，地址为192.168.5.84:8080/EpointMobilePlatform，用户名：admin，密码：11111
+> 对应的目录为\192.168.5.84\c$\apache-tomcat-7.0.57_Windows_64bit\webapps\EpointMobilePlatform
+
+## 数据库说明
+
+
 
 ## 移动公文app自动更新配置
 
