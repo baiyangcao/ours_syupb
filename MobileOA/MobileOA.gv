@@ -1,0 +1,16 @@
+digraph mobileoa {
+    node [fontname = "Microsoft YaHei", fontsize = 12 ]
+
+    "移动端" -> { "移动办公"; "移动公文" }
+
+    "移动办公" -> { "App"; "AndroidWebService"; "AndroidAdmin" }
+    { "AndroidWebService"; "AndroidAdmin"} -> {"测试版(8090端口)"; "正式版(80端口)" }
+    "测试版(8090端口)" -> "androidadmintest"
+    "正式版(80端口)" -> "androidadmin"
+    { "androidadmin"; "androidadmintest" } -> "Oracle\n192.168.5.87/orcl"
+    
+
+    "移动公文" -> { "App"; "GeoOAWebService"; "EpointMobilePlatform"; }
+    "EpointMobilePlatform" -> "MySql"
+    "GeoOAWebService" -> "SQL Server\n192.168.5.83/syupb"
+}
