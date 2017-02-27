@@ -26,7 +26,7 @@
   * [成果管理系统抽取工具配置](syams.md)
   * [数据抽取工具](datatransfer.md)
   * [办文批量归档工具](bwbatch.md)
-  * [移动办公系统](mobileoa.md)
+  * [移动办公系统](MobileOA/README.md)
   * [你问我答](q&a.md)
 
 
