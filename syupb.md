@@ -50,3 +50,79 @@ select 参数 from A00GIS_图形模块运行参数表 where 参数ID = '60201'
 
 上述中配置的 SQL 语句，获取的结果对应的列名为导入图层对应的字段名，
 并且在执行查询时会注入两个变量， `{0} -> InstanceID`,`{1} -> UserOID`
+
+## 图形定位配置
+
+在进行坐标导入，图形入库之后，需要在业务审批案件中进行图形定位，
+进行如下配置：
+
+### 图形服务配置
+
+业务审批对应的图形配置文件在 `D:\syupb\BPObject\NJGIS\flex\appCfg_Case.xml` 
+（其实，图形端对应的配置文件都可以通过 fiddler 抓包来查看）  
+  
+ - 在 `configuration/mapServiceConfig/systemTree` 下添加 `Service` 节点，
+   配置对应的地图服务地址
+
+   ```
+   <Service ServiceID="划拨用地" Type="Dynamic" URL="http://192.168.0.1/arcgis/rest/services/DGHY/HBYD/MapServer">
+        <Layer IndexNo="0" LayerName="划拨用地" />
+      </Service>
+   ```
+
+   * `ServiceID` 服务唯一标识，在文件中不能重复
+   * `Type` 服务类型，这里配置 `Dynamic` 表示矢量图层
+   * `URL` 服务地址
+   * `Layer/IndexNo|LayerName` 为服务下图层的索引和名称，需与服务中的一致
+
+ - 在 `configuration/mapServiceConfig/serviceTree` 下添加 `Service` 节点，
+   配置对应的服务树，其中 `ServiceID` 对应 `systemTree` 中的服务 ID
+
+   ```
+    <Service ServiceKey="划拨用地" Name="划拨用地">
+        <ServiceInfo Scale="Default" ServiceID="划拨用地"/>
+    </Service>
+   ```
+
+ - 在 `configuration/mapServiceConfig/libTree` 下添加对应的目录结构，
+   用于在图形端图层控制界面显示
+
+   ```
+    <DataDIR NodeText="划拨用地" NodeKey="7C3A9A8C-D7E0-47B1-9455-B9554B37F325" Expand="0" isLib="true" Load="0" ServiceKey="划拨用地">
+	    <Layer NodeKey="BEB4D8B1-6A4A-4EBA-954C-005DB2689D4D" NodeText="划拨用地" Load="0" Expand="0" LayerName="划拨用地" LayerDefinition="">
+	    </Layer>
+    </DataDIR>
+   ```
+
+   * `NodeText` 图层控制中显示的文本名称
+   * `NodeKey` 对应的节点唯一标识，在配置文件中唯一，一般为 GUID
+   * `Load` 是否默认加载， 0 表示不加载
+   * `ServiceKey` 对应 `serviceTree` 下的服务标识 `ServiceKey`
+   * `LayerName` 对应 `systemTree` 下的 `LayerName`
+
+至此，便可以在图形端中的图层控制中显示出刚刚配置的图层了
+
+### 图形定位配置
+
+在 `configuration/configs/OpenMaps` 下添加 `OpenMap` 节点，
+用于开图配置
+
+```
+<OpenMap>
+    <MapService serviceKey="划拨用地">
+        <MapLayer layername="划拨用地">
+            <item content="案件编号='%val%'"/>
+        </MapLayer>
+    </MapService>
+    <ShowMap NodeKey="BEB4D8B1-6A4A-4EBA-954C-005DB2689D4D"/>
+    <Step name="划拨用地"/>
+    <Menu name="划拨用地"/>
+</OpenMap>
+```
+
+ - `serviceKey/layername` 为之前图形配置中的服务标识和图层名称
+ - `item[content]` 为查询时使用的 where 条件，一般按照案件编号查询，
+   传入的 val 为案件的 InstanceID
+ - `ShowMap[NodeKey]` 为之前配置的 `Layer[NodeKey]` ，
+   用于配置定位时要显示的图层
+ - `Step[name]/Menu[name]` 配置事项名称
