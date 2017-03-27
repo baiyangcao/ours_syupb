@@ -126,3 +126,7 @@ select 参数 from A00GIS_图形模块运行参数表 where 参数ID = '60201'
  - `ShowMap[NodeKey]` 为之前配置的 `Layer[NodeKey]` ，
    用于配置定位时要显示的图层
  - `Step[name]/Menu[name]` 配置事项名称
+
+## 用户岗位管理图
+
+![用于岗位关系图](images/UCML_User_Post.png)
