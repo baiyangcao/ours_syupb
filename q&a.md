@@ -38,7 +38,7 @@
 >   
 > `A:` 关联关系如下：
 > 
-> ```
+> ```sql
 > GeoGGFlowInstance b
 > left join GeoGGProject c
 >   on c.InstanceID = b.FolderID
