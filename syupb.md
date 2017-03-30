@@ -130,3 +130,42 @@ select 参数 from A00GIS_图形模块运行参数表 where 参数ID = '60201'
 ## 用户岗位关系图
 
 ![用于岗位关系图](images/UCML_User_Post.png)
+
+## XmlPorterConfig.xml配置说明
+
+基本配置结构如下：
+
+```xml
+<root>
+  <export key="">
+    <table name=""
+           exportname=""
+           condition="">
+      <field name="" type="date|byte" />
+    </table>
+  </export>
+  <import key="">
+    <table name="">
+      <field name="" type="date|byte" />
+    </table>
+  </import>
+</root>
+```
+
+### `<export>`节点配置
+
+`<export>` 节点下配置需要导出的数据表 `<table>`，属性说明如下：
+
+ 属性名称 | 说明
+--------- | ------
+ name | 导出数据表的名称，用于拼接查询SQL语句
+ exportname | 导出 xml 文件中 `<table>` 节点的 `name` 属性值，如果没有则取 `name` 属性值
+ condition | 用于拼接SQL语句后的 where 子句，会使用 `projectguid` 进行格式化
+
+`<table>` 节点下配置表格中需要导出的字段 `<field>`，属性说明如下：
+
+属性名称 | 说明
+------- | -------
+name | 属性表示字段名称，用于拼接SQL语句，也作为导出 xml 文件中的 `<table>` 节点下字段的标签名
+type | 属性用于标识字段类型，可取值有 `date` 和 `byte` ，`date` 表示时间字段，导出值会被格式化为 `yyyy-MM-dd hh:mm:ss` 样式， `byte` 表示二进制字段（Image 类型等），导出值会被格式化为 Base64 编码的字符串。如果没有 `type` 属性，则按照字符串处理。
+
