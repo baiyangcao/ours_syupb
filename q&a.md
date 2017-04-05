@@ -111,3 +111,23 @@
 > ![](images/MapCfg_DisplayField.png)
 > 
 > 注： 程序在2016.11.11（是的，没错，就是光棍节）修复，应用于水源地保护展示系统，其他系统皆未更新。
+
+## Git 应用补丁报错 “sha1 information is lacking or useless”
+
+> `Q:` 更新程序，应用补丁时报错"sha1 information is lacking or useless (config.xml)."
+>   
+> `A:` 总的来说就是强制应用补丁，手动解决文件问题，然后在继续应用补丁即可
+>
+> - 执行 git am --3way --signoff --reject 0001.path 命令应用补丁，
+并将补丁中不可应用的部分保存在 *.rej 文件中，例如：以上面的报错信息来说，
+就会多出来一个 config.xml.rej 文件来标识不可应用的部分
+>
+> - 根据 *.rej 文件修改没有应用完全的文件，我在处理的时候就比较生猛，
+直接删除 *.rej 文件，然后将修改后的文件覆盖
+>
+> - 然后将需要提交的文件添加到缓存区 git add ... ，因为应用补丁的过程基本就是修改文件，添加文件到缓存区，提交修改，由于修改文件的时候产生过了错误，所以应用补丁过程就停在了修改文件环节，再继续执行时我们就需要将需要提交的文件添加到缓存区
+>
+> - 最后执行 git am --continue 来继续执行补丁的应用即可
+>
+> 参考链接：<http://stackoverflow.com/questions/25846189/git-am-error-patch-does-not-apply>
+
